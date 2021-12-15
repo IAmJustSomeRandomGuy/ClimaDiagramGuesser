@@ -1,0 +1,264 @@
+:root {
+	--default_shadow: 1px;
+	--default_shadow_smudge: 6px;
+	--default_shadow_smudge_text: 3px;
+	--font-neo-sans: neo-sans, sans-serif;
+
+	--bg-pics-start-1: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/desert.webp") right/cover no-repeat;
+	--bg-pics-start-2: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/mountain.webp") right/cover no-repeat;
+	--bg-pics-start-3: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/rainy-city.webp") right/cover no-repeat;
+	--bg-pics-start-4: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/sunny-hillside.webp") right/cover no-repeat;
+	--bg-pics-start-5: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/wasteland.webp") right/cover no-repeat;
+	--bg-pics-start-6: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/ice-land.jpg") right/cover no-repeat;
+}
+
+* {
+	margin: 0;
+}
+
+.invisible {
+	display: none;
+}
+
+.clickable {
+	transition: transform 0.2s;
+	user-select: none;
+	pointer-events: all;
+}
+.clickable:hover {
+	transform: scale(1.07);
+}
+
+.not-clickable {
+	pointer-events: none;
+}
+
+.bg-pic {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(121, 217, 255, 0.5);
+
+	overflow: hidden;
+}
+
+#start-screen {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+
+	display: flex;
+	flex-direction: column;
+
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/desert.webp") right/cover no-repeat;
+	animation: swap-bg-start infinite 45s;
+
+	justify-content: space-evenly;
+	align-items: center;
+}
+@keyframes swap-bg-start {
+	0% {
+		background: var(--bg-pics-start-1);
+	}
+	16.6% {
+		background: var(--bg-pics-start-1);
+	}
+	16.7% {
+		background: var(--bg-pics-start-3);
+	}
+	50% {
+		background: var(--bg-pics-start-3);
+	}
+	50.1% {
+		background: var(--bg-pics-start-5);
+	}
+	83.3% {
+		background: var(--bg-pics-start-5);
+	}
+	83.4% {
+		background: var(--bg-pics-start-1);
+	}
+}
+#start-screen-2 {
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	position: fixed;
+
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)) no-repeat fixed,
+		url("../img/mountain.webp") right/cover no-repeat;
+	animation: swap-bg-start-2 infinite 45s;
+}
+@keyframes swap-bg-start-2 {
+	0% {
+		background: var(--bg-pics-start-2);
+		opacity: 0;
+	}
+	16.6% {
+		background: var(--bg-pics-start-2);
+		opacity: 1;
+	}
+	33.3% {
+		background: var(--bg-pics-start-2);
+		opacity: 0;
+	}
+	33.4% {
+		background: var(--bg-pics-start-4);
+		opacity: 0;
+	}
+	50% {
+		background: var(--bg-pics-start-4);
+		opacity: 1;
+	}
+	66.6% {
+		background: var(--bg-pics-start-4);
+		opacity: 0;
+	}
+	66.7% {
+		background: var(--bg-pics-start-6);
+		opacity: 0;
+	}
+	83.3% {
+		background: var(--bg-pics-start-6);
+		opacity: 1;
+	}
+
+	99.9% {
+		background: var(--bg-pics-start-6);
+		opacity: 0;
+	}
+}
+
+#title {
+	opacity: 1;
+	z-index: 1;
+	user-select: none;
+
+	font-size: 2.25rem;
+	font-weight: 700;
+	font-family: var(--font-neo-sans);
+	font-style: italic;
+	text-shadow: var(--default_shadow) var(--default_shadow) var(--default_shadow_smudge_text);
+}
+
+#start-button {
+	width: 275px;
+	height: 75px;
+	border-radius: 100px;
+	opacity: 1;
+	z-index: 2;
+
+	background-color: rgb(42, 129, 42);
+	font-size: 1.75rem;
+	font-weight: 700;
+	font-family: var(--font-neo-sans);
+	font-style: italic;
+
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+
+	box-shadow: var(--default_shadow) var(--default_shadow) var(--default_shadow_smudge);
+}
+
+#game {
+	position: fixed;
+	z-index: -1;
+	background-color: lightblue;
+}
+
+#world-map {
+	width: 100vw;
+	height: 100vh;
+}
+
+#world-map-img {
+	height: 100%;
+	width: 100%;
+	border: 1px black solid;
+	display: flex;
+	justify-content: center;
+
+	background-image: url("../img/BlankMap-World-Compact.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	scale: 0.5;
+}
+
+#location-grid {
+	position: absolute;
+	border: black solid 1px;
+	align-self: center;
+}
+
+#connect-pointers {
+	position: fixed;
+
+	width: 1px;
+	height: 1px;
+	background-color: goldenrod;
+}
+#loc-pointer {
+	position: fixed;
+
+	width: 7px;
+	height: 7px;
+	background-color: goldenrod;
+	border-radius: 50%;
+}
+#map-pointer {
+	position: fixed;
+
+	width: 7px;
+	height: 7px;
+	background-color: firebrick;
+	border-radius: 50%;
+}
+
+#recenter-button {
+	position: absolute;
+	z-index: -1;
+
+	width: 55px;
+	height: 55px;
+	background-color: darkolivegreen;
+	border-radius: 50%;
+
+	top: 85%;
+	left: 10px;
+}
+#end-game-button {
+	position: absolute;
+	z-index: -1;
+
+	width: 55px;
+	height: 55px;
+	background-color: goldenrod;
+	border-radius: 50%;
+
+	top: 85%;
+	left: 80px;
+}
+
+#climate-diagram {
+	position: absolute;
+	z-index: -1;
+
+	background-color: aquamarine;
+	opacity: 0.3;
+
+	width: 350px;
+	height: 200px;
+
+	top: 7.5%;
+	left: 70%;
+}

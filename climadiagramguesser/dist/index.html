@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ClimaGeoGuesser</title>
+		<link rel="stylesheet" href="./css/style.css" id="css-file" />
+		<style>
+			@font-face {
+				font-family: "neo-sans";
+				font-style: normal;
+				font-weight: 700;
+				font-display: swap;
+				src: url("https://use.typekit.net/af/b07eb4/00000000000000007735bb57/30/l?primer=83aaf8b3086dc5b082c9b97866118e90ec8a0116a2f1fa26fea125d379f2cd21&fvd=n7&v=3")
+					format("woff2");
+			}
+
+			@font-face {
+				font-family: "neo-sans";
+				font-style: italic;
+				font-weight: 700;
+				font-display: swap;
+				src: url("https://use.typekit.net/af/49bd4e/00000000000000007735bb45/30/l?primer=83aaf8b3086dc5b082c9b97866118e90ec8a0116a2f1fa26fea125d379f2cd21&fvd=i7&v=3")
+					format("woff2");
+			}
+
+			@font-face {
+				font-family: "neo-sans";
+				font-style: italic;
+				font-weight: 400;
+				font-display: swap;
+				src: url("https://use.typekit.net/af/cc16b7/00000000000000007735bb40/30/l?primer=83aaf8b3086dc5b082c9b97866118e90ec8a0116a2f1fa26fea125d379f2cd21&fvd=i4&v=3")
+					format("woff2");
+			}
+
+			@font-face {
+				font-family: "neo-sans";
+				font-style: normal;
+				font-weight: 500;
+				font-display: swap;
+				src: url("https://use.typekit.net/af/fde5b4/00000000000000007735bb56/30/l?primer=83aaf8b3086dc5b082c9b97866118e90ec8a0116a2f1fa26fea125d379f2cd21&fvd=n5&v=3")
+					format("woff2");
+			}
+
+			@font-face {
+				font-family: "neo-sans";
+				font-style: normal;
+				font-weight: 400;
+				font-display: swap;
+				src: url("https://use.typekit.net/af/b34fab/00000000000000007735bb5f/30/l?primer=83aaf8b3086dc5b082c9b97866118e90ec8a0116a2f1fa26fea125d379f2cd21&fvd=n4&v=3")
+					format("woff2");
+			}
+		</style>
+	</head>
+	<body>
+		<div class="non-ads" >
+			<div id="start-screen" class="bg-pic">
+				<div id="start-screen-2" class="bg-pic not-clickable"></div>
+				<div id="title">Clima-GeoGuesser</div>
+				<div id="start-button" class="clickable">Start</div>
+			</div>
+
+			<div id="game">
+				<div id="world-map">
+						<div id="world-map-img">
+							<div id="connect-pointers" class="invisible"></div>
+							<div id="loc-pointer" class="invisible"></div>
+							<div id="map-pointer" class="invisible"></div>
+							<div id="location-grid"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="recenter-button" class="clickable"></div>
+			<div id="end-game-button" class="clickable"></div>
+
+
+			<div id="climate-diagram" class=""></div>
+		</div>
+
+		<script type="module" src="./js/main.js" class="non-ads"></script>
+	</body>
+</html>
